@@ -13,9 +13,10 @@ public class BubbleSort {
         int comparisonsDone = 0;
         int swapsDone = 0;
         boolean sorted = false;
+        int rangeScan=array.length - 1;
         while (!sorted) {
             sorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
+            for (int i = 0; i < rangeScan; i++) {
                 printArray(array);
                 if (array[i] > array[i+1]) {
                     System.out.println("Swap " + array[i] + " and " + array[i+1]);
@@ -29,6 +30,7 @@ public class BubbleSort {
                 }
                 comparisonsDone++;
             }
+            rangeScan--;
         }
         System.out.println("Array size = " + array.length);
         System.out.println("Comparisons done = " + comparisonsDone);
